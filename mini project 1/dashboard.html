@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Finance Tracker</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <h1>💰 Finance Tracker</h1>
+    <div class="nav-actions">
+      <button id="accountBtn">My Account</button>
+      <a href="index.html">Logout</a>
+    </div>
+  </nav>
+
+  <main class="dashboard">
+    <section class="summary">
+      <div class="card balance">
+        <h2>Balance</h2>
+        <p id="balance">₹0.00</p>
+      </div>
+      <div class="card income">
+        <h3>Income</h3>
+        <p id="income">₹0.00</p>
+      </div>
+      <div class="card expense">
+        <h3>Expenses</h3>
+        <p id="expense">₹0.00</p>
+      </div>
+    </section>
+
+    <section class="transactions">
+      <h2 id="viewAll" style="cursor:pointer; text-decoration:underline;">Recent Transactions</h2>
+      <ul id="transactionList"></ul>
+    </section>
+
+    <section class="add-transaction">
+      <h2>Add New Transaction</h2>
+      <form id="transactionForm">
+        <input type="text" id="desc" placeholder="Description" required />
+        <input type="number" id="amount" placeholder="Amount (₹)" required />
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Transactions Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>All Transactions</h3>
+      <ul id="fullTransactionList"></ul>
+    </div>
+  </div>
+
+  <!-- Account Modal -->
+  <div id="accountModal" class="modal">
+    <div class="modal-content">
+      <span id="closeAccount">&times;</span>
+      <h3>My Account</h3>
+      <p><strong>Name:</strong> <span id="accName"></span></p>
+      <p><strong>Email:</strong> <span id="accEmail"></span></p>
+      <p><strong>Username:</strong> <span id="accUsername"></span></p>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
